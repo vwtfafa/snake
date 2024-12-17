@@ -1,0 +1,103 @@
+/* Allgemeine Einstellungen */
+body {
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    background: #222;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+h1, h2 {
+    color: #00FF7F;
+}
+
+/* Start Screen */
+#startScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+#nameInput {
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 250px;
+    font-size: 18px;
+    text-align: center;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+    background-color: #00FF7F;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00cc66;
+}
+
+/* Game Canvas */
+#gameCanvas {
+    background: black;
+    border: 5px solid #00FF7F;
+    box-shadow: 0 0 15px #00FF7F;
+    margin-bottom: 20px;
+}
+
+/* Pause Button */
+#pauseButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background: #FF4500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Leaderboard */
+#leaderboard {
+    text-align: center;
+    margin-top: 20px;
+    color: #00FF7F;
+}
+
+#leaderboardList {
+    margin: 10px 0;
+}
+
+/* Game Over Screen */
+#gameOverScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+#gameOverScreen button {
+    background-color: #FF4500;
+    color: white;
+    border-radius: 5px;
+}

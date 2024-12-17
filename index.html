@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Spiel</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Press Start 2P', cursive;
+            background: #111;
+            color: #00FF7F;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #startScreen, #gameOverScreen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        button, input {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 14px;
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button {
+            background: #00FF7F;
+            color: #111;
+        }
+
+        canvas {
+            background: black;
+            border: 5px solid #00FF7F;
+            display: block;
+        }
+
+        #leaderboard {
+            margin: 20px;
+            text-align: center;
+        }
+
+        #leaderboard ol {
+            padding-left: 0;
+            list-style: none;
+            color: #00FF7F;
+        }
+
+        #leaderboard li {
+            margin: 5px 0;
+        }
+
+        #playerScore {
+            margin-top: 20px;
+        }
+
+        #adminLink {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: #FF4500;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Startscreen -->
+    <div id="startScreen">
+        <h1>Snake Spiel</h1>
+        <input type="text" id="playerNameInput" placeholder="Dein Name">
+        <button onclick="startGame()">Spiel starten</button>
+        <div id="adminLink" onclick="location.href='admin.html'">🔒 Admin</div>
+    </div>
+
+    <!-- Spielfeld -->
+    <canvas id="gameCanvas" width="400" height="400" style="display: none;"></canvas>
+
+    <!-- Punktanzeige -->
+    <div id="playerScore" style="display: none;">Punkte: 0</div>
+
+    <!-- Game Over Screen -->
+    <div id="gameOverScreen" style="display: none;">
+        <h1>Game Over!</h1>
+        <button onclick="restartGame()">Neustarten</button>
+    </div>
+
+    <!-- Bestenliste -->
+    <div id="leaderboard">
+        <h2>🏆 Bestenliste 🏆</h2>
+        <ol id="leaderboardList"></ol>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
